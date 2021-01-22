@@ -1,1 +1,3 @@
-console.log('This is a test')
+const person = require('./person');
+
+console.log(person.name);
