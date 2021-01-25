@@ -39,7 +39,7 @@ const path = require('path');
 //     console.log('File written to...')
 
 //     // Appends new text to the existing file
-//     fs.appendFile(path.join(__dirname, 'test', 'hello.txt'), 'This is another test...good bye! ', (err) => {
+//     fs.appendFile(path.join(__dirname, 'test', 'hello.txt'), 'This is another test...goodbye! ', (err) => {
 
 //         // Throws error message in console if an error is found
 //         if(err) throw err;
@@ -54,12 +54,25 @@ const path = require('path');
 // Example Four
 
 // Read File
-fs.readFile(path.join(__dirname, 'test', 'hello.txt'), 'utf8', (err, data) => {
+// fs.readFile(path.join(__dirname, 'test', 'hello.txt'), 'utf8', (err, data) => {
+
+//     // Throws error message in console if an error is found
+//     if(err) throw err;
+
+//     // Displays the data from the file in the console
+//     console.log(data)
+
+// });
+
+// Example Five
+
+// Read File
+fs.rename(path.join(__dirname, 'test', 'hello.txt'), path.join(__dirname, 'test', 'hello-goodbye.txt'), (err, data) => {
 
     // Throws error message in console if an error is found
     if(err) throw err;
 
-    // Displays the data from the file in the console
-    console.log(data)
+    // Informs user that a folder was renamed in the console
+    console.log('File renamed...')
 
 });
