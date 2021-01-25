@@ -18,15 +18,34 @@
 // Example Three
 
     // Imports the file needed
-    const Logger = require('./logger');
+    // const Logger = require('./logger');
 
-    // Applies the Logger class
-    const logger = new Logger();
+    // // Applies the Logger class
+    // const logger = new Logger();
 
-    // Preps the data
-    logger.on('message', (data) => console.log('Called Listener: ', data));
+    // // Preps the data
+    // logger.on('message', (data) => console.log('Called Listener: ', data));
 
-    // Uses the Logger class
-    logger.log('Hello there!');
-    logger.log('Hey there!');
-    logger.log('JUMBO!');
+    // // Uses the Logger class
+    // logger.log('Hello there!');
+    // logger.log('Hey there!');
+    // logger.log('JUMBO!');
+
+// Example Four
+
+    // Imports
+    const http = require('http');
+    const path = require('path');
+    const fs = require('fs');
+
+    // Creates the server
+    const server = http.createServer((req, res) => {
+
+        console.log(req.url);
+
+    });
+
+    // The port for the server to use
+    const PORT = process.env.PORT || 5000;
+
+    server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
