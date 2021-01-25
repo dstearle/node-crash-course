@@ -74,11 +74,29 @@
         // Prints out the current url in the console
         // console.log(req.url);
 
-        // If the current url is set to nothing go to home
+        // If the current url is set to the home page
         if(req.url === '/') {
 
             // Reads the file 'index.html'
             fs.readFile(path.join(__dirname, 'public', 'index.html'), (err, content) => {
+
+                // If error is found
+                if(err) throw err;
+
+                // Content Type & 200 Status
+                res.writeHead(200, {'Content-Type': 'text/html'});
+                // The content to be shown
+                res.end(content);
+
+            })
+
+        }
+
+        // If the current url is set to the about page
+        if(req.url === '/about') {
+
+            // Reads the file 'index.html'
+            fs.readFile(path.join(__dirname, 'public', 'about.html'), (err, content) => {
 
                 // If error is found
                 if(err) throw err;
