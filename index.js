@@ -110,6 +110,22 @@
 
         }
 
+        // If the current url is set like an api
+        if(req.url === '/api/users') {
+
+            // An array of user data
+            const users = [
+                { name: 'Alexander', age: 1 },
+                { name: 'Dallas', age: 30 },
+            ];
+
+            // Content Type & 200 Status
+            res.writeHead(200, {'Content-Type': 'application/json'});
+            // Sets the 'user' array to json
+            res.end(JSON.stringify(users));
+
+        }
+
     });
 
     // The port for the server to use
