@@ -47,7 +47,10 @@
         // If the current url is set to nothing go to home
         if(req.url === '/') {
 
-            res.end('<h1>Welcome Home Son :)</h1>')
+            // The content type
+            res.writeHead(200, {'Content-Type': 'text/html'});
+            // The content to show on the page
+            res.end('<h1>Welcome Home Son :)</h1>');
 
         }
 
