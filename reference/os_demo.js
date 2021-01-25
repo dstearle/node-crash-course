@@ -13,4 +13,11 @@ const os = require('os');
 // Example Three
 
 // Displays the CPU core info
-console.log(os.cpus());
+// console.log(os.cpus());
+
+// Example Four
+
+// Displays the amount of free memory left in the device
+console.log(os.freemem());
+// Displays the total amount of free memory in the device
+console.log(os.totalmem());
