@@ -41,7 +41,15 @@
     // Creates the server
     const server = http.createServer((req, res) => {
 
-        console.log(req.url);
+        // Prints out the current url in the console
+        // console.log(req.url);
+
+        // If the current url is set to nothing go to home
+        if(req.url === '/') {
+
+            res.end('<h1>Welcome Home Son :)</h1>')
+
+        }
 
     });
 
