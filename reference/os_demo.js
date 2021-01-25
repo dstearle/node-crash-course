@@ -25,4 +25,14 @@ const os = require('os');
 // Example Five
 
 // Displays the home directory
-console.log(os.homedir());
+// console.log(os.homedir());
+
+// Example Six
+
+// Displays the home directory
+// console.log(os.homedir());
+
+// Example Seven
+
+// Displays the uptime
+console.log(os.uptime());
