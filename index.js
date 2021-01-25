@@ -34,6 +34,36 @@
 // Example Four
 
     // Imports
+    // const http = require('http');
+    // const path = require('path');
+    // const fs = require('fs');
+
+    // // Creates the server
+    // const server = http.createServer((req, res) => {
+
+    //     // Prints out the current url in the console
+    //     // console.log(req.url);
+
+    //     // If the current url is set to nothing go to home
+    //     if(req.url === '/') {
+
+    //         // The content type
+    //         res.writeHead(200, {'Content-Type': 'text/html'});
+    //         // The content to show on the page
+    //         res.end('<h1>Welcome Home Son :)</h1>');
+
+    //     }
+
+    // });
+
+    // // The port for the server to use
+    // const PORT = process.env.PORT || 5000;
+
+    // server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// Example Five
+
+    // Imports
     const http = require('http');
     const path = require('path');
     const fs = require('fs');
@@ -47,10 +77,18 @@
         // If the current url is set to nothing go to home
         if(req.url === '/') {
 
-            // The content type
-            res.writeHead(200, {'Content-Type': 'text/html'});
-            // The content to show on the page
-            res.end('<h1>Welcome Home Son :)</h1>');
+            // Reads the file 'index.html'
+            fs.readFile(path.join(__dirname, 'public', 'index.html'), (err, content) => {
+
+                // If error is found
+                if(err) throw err;
+
+                // Content Type & 200 Status
+                res.writeHead(200, {'Content-Type': 'text/html'});
+                // The content to be shown
+                res.end(content);
+
+            })
 
         }
 
