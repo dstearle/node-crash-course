@@ -152,6 +152,27 @@
         // Initial content type
         let contentType = 'text/html';
 
+        // Check extension and set content type
+        switch(extname) {
+
+            case '.js':
+                contentType = 'text/javascript';
+                break;
+            case '.css':
+                contentType = 'text/css';
+                break;
+            case '.json':
+                contentType = 'text/json';
+                break;
+            case '.png':
+                contentType = 'text/png';
+                break;
+            case '.jpg':
+                contentType = 'text/jpg';
+                break;
+                    
+        }
+
     });
 
     // The port for the server to use
