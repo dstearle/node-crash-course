@@ -144,6 +144,7 @@
     const server = http.createServer((req, res) => {
 
         // Build file path
+        // If '/' then use index.html if not then use the file path
         let filePath = path.join(__dirname, 'public', req.url === '/' ? 'index.html' : req.url);
 
         // Extension of file
@@ -209,7 +210,7 @@
             else {
 
                 // Content Type & 200 Status
-                res.writeHead(200, {'Content-Type': 'text/html'});
+                res.writeHead(200, {'Content-Type': contentType});
                 // The content to be shown
                 res.end(content, 'utf8');
 
