@@ -205,6 +205,16 @@
 
             }
 
+            // Successful Response
+            else {
+
+                // Content Type & 200 Status
+                res.writeHead(200, {'Content-Type': 'text/html'});
+                // The content to be shown
+                res.end(content, 'utf8');
+
+            }
+
         });
 
     });
