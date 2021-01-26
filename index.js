@@ -181,7 +181,7 @@
             if(err) {
 
                 // If error is similar to a 404 (not found)
-                if(err.code == 'ENONET') {
+                if(err.code == 'ENOENT') {
 
                     fs.readFile(path.join(__dirname, 'public', '404.html'), (err, content) => {
 
