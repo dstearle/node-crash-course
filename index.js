@@ -173,6 +173,40 @@
                     
         }
 
+        // Read file
+        fs.readFile(filePath, (err, content) => {
+
+            // If an error is found...
+            if(err) {
+
+                // If error is similar to a 404 (not found)
+                if(err.code == 'ENONET') {
+
+                    fs.readFile(path.join(__dirname, 'public', '404.html'), (err, content) => {
+
+                        // Content Type & 200 Status
+                        res.writeHead(200, {'Content-Type': 'text/html'});
+                        // Sets the 'user' array to json
+                        res.end(content, 'utf8');
+
+                    })
+
+                }
+
+                // Else the error is not a 404
+                else {
+
+                    // Content Type & 500 Status
+                    res.writeHead(500);
+                    // The error
+                    res.end(`Server Error: ${err.code}`);
+
+                }
+
+            }
+
+        });
+
     });
 
     // The port for the server to use
